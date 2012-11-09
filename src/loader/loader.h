@@ -7,7 +7,8 @@ using Eigen::VectorXd;
 namespace loader{
 	class Loader{
 
+	public:
 		virtual void get_training_data(std::vector<VectorXd> &samples)=0;
 
 	};
-}
+};

@@ -65,11 +65,11 @@ DIST_SOURCES = $(neuralnet_SOURCES)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/orthez/workspace/c++/NN/missing --run aclocal-1.11
-AMTAR = ${SHELL} /home/orthez/workspace/c++/NN/missing --run tar
-AUTOCONF = ${SHELL} /home/orthez/workspace/c++/NN/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/orthez/workspace/c++/NN/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/orthez/workspace/c++/NN/missing --run automake-1.11
+ACLOCAL = ${SHELL} /home/orthez/git/NN/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/orthez/git/NN/missing --run tar
+AUTOCONF = ${SHELL} /home/orthez/git/NN/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/orthez/git/NN/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/orthez/git/NN/missing --run automake-1.11
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -94,7 +94,7 @@ LDFLAGS =
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/orthez/workspace/c++/NN/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/orthez/git/NN/missing --run makeinfo
 MKDIR_P = /bin/mkdir -p
 OBJEXT = o
 PACKAGE = orthez
@@ -109,10 +109,10 @@ SET_MAKE =
 SHELL = /bin/bash
 STRIP = 
 VERSION = 2.6
-abs_builddir = /home/orthez/workspace/c++/NN/src
-abs_srcdir = /home/orthez/workspace/c++/NN/src
-abs_top_builddir = /home/orthez/workspace/c++/NN
-abs_top_srcdir = /home/orthez/workspace/c++/NN
+abs_builddir = /home/orthez/git/NN/src
+abs_srcdir = /home/orthez/git/NN/src
+abs_top_builddir = /home/orthez/git/NN
+abs_top_srcdir = /home/orthez/git/NN
 ac_ct_CC = gcc
 ac_ct_CXX = g++
 am__include = include
@@ -132,7 +132,7 @@ host_alias =
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/orthez/workspace/c++/NN/install-sh
+install_sh = ${SHELL} /home/orthez/git/NN/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
@@ -450,6 +450,11 @@ uninstall-am: uninstall-binPROGRAMS
 	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
 	uninstall-am uninstall-binPROGRAMS
 
+
+run:
+	./$(bin_PROGRAMS)
+
+.PHONY: run 
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

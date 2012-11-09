@@ -37,14 +37,14 @@ struct NeuralNetworkState{
 			assert(L_hidden_layers>=1);
 			assert(N_hidden_neurons_per_layer>=1);
 
-			W.at(0)= MatrixXd::Random(N_hidden_neurons_per_layer, N_input_neurons);
-			b.at(0)= VectorXd::Random(N_hidden_neurons_per_layer);
+			W.push_back( MatrixXd::Random(N_hidden_neurons_per_layer, N_input_neurons) );
+			b.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
 			for(uint l=1;l<L_hidden_layers;l++){
-				W.at(l)= MatrixXd::Random(N_hidden_neurons_per_layer, N_hidden_neurons_per_layer);
-				b.at(l)= VectorXd::Random(N_hidden_neurons_per_layer);
+				W.push_back( MatrixXd::Random(N_hidden_neurons_per_layer, N_hidden_neurons_per_layer) );
+				b.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
 			}
-			W.at(L_hidden_layers)= MatrixXd::Random(N_output_neurons, N_hidden_neurons_per_layer);
-			b.at(L_hidden_layers)= VectorXd::Random(N_output_neurons);
+			W.push_back( MatrixXd::Random(N_output_neurons, N_hidden_neurons_per_layer) );
+			b.push_back( VectorXd::Random(N_output_neurons));
 		
 		};
 

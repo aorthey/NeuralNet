@@ -272,7 +272,15 @@ main.o: main.cpp /usr/include/c++/4.4/iostream \
  /usr/local/include/eigen3/Eigen/src/Eigenvalues/./ComplexSchur.h \
  /usr/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  ActivationFunction.h ObjectiveFunction.h NeuralNetworkState.h \
- loader/loader.h
+ loader/loader.h loader/mnist.h /usr/include/c++/4.4/fstream \
+ /usr/include/c++/4.4/bits/codecvt.h /usr/include/c++/4.4/cstdio \
+ /usr/include/libio.h /usr/include/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h \
+ /usr/include/c++/4.4/x86_64-linux-gnu/./bits/basic_file.h \
+ /usr/include/c++/4.4/x86_64-linux-gnu/./bits/c++io.h \
+ /usr/include/c++/4.4/bits/fstream.tcc
 
 /usr/include/c++/4.4/iostream:
 
@@ -907,3 +915,27 @@ ObjectiveFunction.h:
 NeuralNetworkState.h:
 
 loader/loader.h:
+
+loader/mnist.h:
+
+/usr/include/c++/4.4/fstream:
+
+/usr/include/c++/4.4/bits/codecvt.h:
+
+/usr/include/c++/4.4/cstdio:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/include/c++/4.4/x86_64-linux-gnu/./bits/basic_file.h:
+
+/usr/include/c++/4.4/x86_64-linux-gnu/./bits/c++io.h:
+
+/usr/include/c++/4.4/bits/fstream.tcc:

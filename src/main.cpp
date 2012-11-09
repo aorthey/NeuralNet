@@ -9,7 +9,7 @@ int main()
 
 	NeuralNetwork nn(10,10,2,10);
 
-	//nn->load_training_samples();
+	nn.load_training_samples();
 	//nn->train();
 
 	//nn->save("storage.dat");

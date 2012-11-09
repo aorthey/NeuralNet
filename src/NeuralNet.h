@@ -7,6 +7,7 @@
 #include "ObjectiveFunction.h"
 #include "NeuralNetworkState.h"
 #include "loader/loader.h"
+#include "loader/mnist.h"
 using std::string;
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
@@ -26,13 +27,15 @@ struct NeuralNetworkComputationUnit{
 	ActivationFunction *theta;
 	ObjectiveFunction *loss;
 
+	void clean(){
+		delete theta;
+		delete loss;
+	}
 
 	void init(){
 		theta = new ActivationFunction(Tanh);
 		loss = new ObjectiveFunction();
-
 	}
-
 
 	void forward_propagation(NeuralNetworkState &state, VectorXd &input, VectorXd label_y){
 		uint L = state.get_L_hidden_layers();
@@ -107,10 +110,14 @@ struct NeuralNetwork{
 	private:
 	NeuralNetworkState *state;
 	NeuralNetworkComputationUnit *computing;
+	std::vector< VectorXd > samples;
+	std::vector< VectorXd > labels;
 
 	public:
 	NeuralNetwork(uint N_input_neurons, uint N_output_neurons, uint L_hidden_layers, uint N_hidden_neurons_per_layer){
 		state = new NeuralNetworkState(N_input_neurons, N_output_neurons, L_hidden_layers, N_hidden_neurons_per_layer);
+
+
 
 	}
 
@@ -123,8 +130,13 @@ struct NeuralNetwork{
 	// whereby x_ij represents dimension j of sample i, N the number of input
 	// dimensions and y the label or target of the sample
 	//
-	void load_training_samples(string filename){
+	void load_training_samples(){
 
+		loader::Loader *l = new loader::MnistLoader();
+
+		l->get_training_data(samples);
+
+		PRINT("loaded " << samples.size() << " samples");
 		//loader::get_training_data();
 
 	}

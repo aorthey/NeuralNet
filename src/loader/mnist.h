@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <iostream>
+#include <fstream>
 #include "loader.h"
 #include "util.h"
 
@@ -20,9 +22,9 @@ namespace loader{
 
 				return ((int)c1 << 24) + ((int)c2 << 16) + ((int)c3 << 8) + c4;
 		}
-		void read_mnist(string fname, std::vector<VectorXd> &samples)
+		void read_mnist(std::string fname, std::vector<VectorXd> &samples)
 		{
-				ifstream file (fname);
+				std::ifstream file(fname.c_str());
 				if (file.is_open())
 				{
 						int magic_number=0;
@@ -39,7 +41,7 @@ namespace loader{
 						n_cols= reverseInt(n_cols);
 						for(int i=0;i<number_of_images;++i)
 						{
-								samples.at(i) = VectorXd(n_rows*n_cols);
+								samples.push_back( VectorXd(n_rows*n_cols) );
 								for(int r=0;r<n_rows;++r)
 								{
 										for(int c=0;c<n_cols;++c)
@@ -50,7 +52,6 @@ namespace loader{
 										}
 								}
 						}
-						return cur;
 				}else{
 					HALT("Could not open file");
 				}
