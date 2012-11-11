@@ -9,6 +9,7 @@ namespace loader{
 
 	public:
 		virtual void get_training_data(std::vector<VectorXd> &samples)=0;
+		virtual void get_training_labels(std::vector<VectorXd> &labels)=0;
 
 	};
 };
