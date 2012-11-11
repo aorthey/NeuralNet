@@ -6,6 +6,7 @@
 #include "ActivationFunction.h"
 #include "ObjectiveFunction.h"
 #include "NeuralNetworkState.h"
+#include "NeuralNetworkDisplayUnit.h"
 #include "loader/loader.h"
 #include "loader/mnist.h"
 using std::string;
@@ -56,7 +57,7 @@ struct NeuralNetworkComputationUnit{
 	
 	}
 
-	void batch_stochastic_gradient_descent(std::vector<VectorXd> &samples, std::vector<VectorXd> &label, uint batch_size){
+	void batch_stochastic_gradient_descent(std::vector<VectorXd> &training_samples, std::vector<VectorXd> &label, uint batch_size){
 
 
 	}
@@ -110,18 +111,17 @@ struct NeuralNetwork{
 	private:
 	NeuralNetworkState *state;
 	NeuralNetworkComputationUnit *computing;
-	std::vector< VectorXd > samples;
-	std::vector< VectorXd > labels;
+	NeuralNetworkDisplayUnit *output;
+	std::vector< VectorXd > training_samples;
+	std::vector< VectorXd > training_labels;
 
 	public:
 	NeuralNetwork(uint N_input_neurons, uint N_output_neurons, uint L_hidden_layers, uint N_hidden_neurons_per_layer){
 		state = new NeuralNetworkState(N_input_neurons, N_output_neurons, L_hidden_layers, N_hidden_neurons_per_layer);
-
-
-
+		output = new NeuralNetworkDisplayUnit();
 	}
 
-	// get training samples from filename
+	// get training training_samples from filename
 	// filename must contain one line for each sample
 	//
 	//  x_01, x_02,..., x_0N, y_0
@@ -134,13 +134,21 @@ struct NeuralNetwork{
 
 		loader::Loader *l = new loader::MnistLoader();
 
-		l->get_training_data(samples);
+		l->get_training_data(training_samples);
+		l->get_training_labels(training_labels);
 
-		PRINT("loaded " << samples.size() << " samples");
+		PRINT("loaded " << training_samples.size() << " training_samples");
 		//loader::get_training_data();
+		//oo
+		//
+		//
+		for(uint i=0;i<10;i++){
+		PRINT("label " << training_labels.at(i));
+		output->visualize_sample(training_samples.at(i), 28,28);
+		}
 
 	}
-	void load_test_samples(string filename){
+	void load_test_training_samples(string filename){
 
 	}
 

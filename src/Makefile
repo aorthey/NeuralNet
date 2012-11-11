@@ -152,8 +152,8 @@ target_alias =
 top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
-AM_CPPFLAGS = `pkg-config eigen3 --cflags`
-AM_LDFLAGS = `pkg-config eigen3 --cflags`
+AM_CPPFLAGS = `pkg-config eigen3 --cflags` `pkg-config opencv-2.3.1 --cflags`
+AM_LDFLAGS = `pkg-config eigen3 --libs` `pkg-config opencv-2.3.1 --libs`
 neuralnet_SOURCES = NeuralNetworkState.h ActivationFunction.h main.cpp NeuralNet.h ObjectiveFunction.h util.h loader/loader.h loader/mnist.h
 all: all-am
 
@@ -168,9 +168,9 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu src/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign src/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu src/Makefile
+	  $(AUTOMAKE) --foreign src/Makefile
 .PRECIOUS: Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \

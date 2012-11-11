@@ -272,9 +272,21 @@ main.o: main.cpp /usr/include/c++/4.4/iostream \
  /usr/local/include/eigen3/Eigen/src/Eigenvalues/./ComplexSchur.h \
  /usr/local/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  ActivationFunction.h ObjectiveFunction.h NeuralNetworkState.h \
- loader/loader.h loader/mnist.h /usr/include/c++/4.4/fstream \
- /usr/include/c++/4.4/bits/codecvt.h /usr/include/c++/4.4/cstdio \
- /usr/include/libio.h /usr/include/_G_config.h \
+ NeuralNetworkDisplayUnit.h /usr/local/include/opencv2/core/core.hpp \
+ /usr/local/include/opencv2/core/types_c.h \
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.6/include/float.h \
+ /usr/include/stdint.h /usr/local/include/opencv2/core/version.hpp \
+ /usr/include/c++/4.4/map /usr/include/c++/4.4/bits/stl_tree.h \
+ /usr/include/c++/4.4/bits/stl_map.h \
+ /usr/include/c++/4.4/bits/stl_multimap.h \
+ /usr/local/include/opencv2/core/operations.hpp \
+ /usr/local/include/opencv2/core/mat.hpp \
+ /usr/local/include/opencv2/highgui/highgui.hpp \
+ /usr/local/include/opencv2/highgui/highgui_c.h \
+ /usr/local/include/opencv2/core/core_c.h loader/loader.h loader/mnist.h \
+ /usr/include/c++/4.4/fstream /usr/include/c++/4.4/bits/codecvt.h \
+ /usr/include/c++/4.4/cstdio /usr/include/libio.h \
+ /usr/include/_G_config.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
  /usr/include/x86_64-linux-gnu/bits/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
@@ -913,6 +925,36 @@ ActivationFunction.h:
 ObjectiveFunction.h:
 
 NeuralNetworkState.h:
+
+NeuralNetworkDisplayUnit.h:
+
+/usr/local/include/opencv2/core/core.hpp:
+
+/usr/local/include/opencv2/core/types_c.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/4.4.6/include/float.h:
+
+/usr/include/stdint.h:
+
+/usr/local/include/opencv2/core/version.hpp:
+
+/usr/include/c++/4.4/map:
+
+/usr/include/c++/4.4/bits/stl_tree.h:
+
+/usr/include/c++/4.4/bits/stl_map.h:
+
+/usr/include/c++/4.4/bits/stl_multimap.h:
+
+/usr/local/include/opencv2/core/operations.hpp:
+
+/usr/local/include/opencv2/core/mat.hpp:
+
+/usr/local/include/opencv2/highgui/highgui.hpp:
+
+/usr/local/include/opencv2/highgui/highgui_c.h:
+
+/usr/local/include/opencv2/core/core_c.h:
 
 loader/loader.h:
 
