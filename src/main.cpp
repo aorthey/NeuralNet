@@ -7,10 +7,10 @@ int main()
 	using std::cout;
 	using std::endl;
 
-	NeuralNetwork nn(10,10,2,10);
+	NeuralNetwork nn(2,10);
 
 	nn.load_training_samples();
-	//nn->train();
+	nn.train();
 
 	//nn->save("storage.dat");
 	//nn->load("storage.dat");

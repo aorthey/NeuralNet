@@ -154,7 +154,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AM_CPPFLAGS = `pkg-config eigen3 --cflags` `pkg-config opencv-2.3.1 --cflags`
 AM_LDFLAGS = `pkg-config eigen3 --libs` `pkg-config opencv-2.3.1 --libs`
-neuralnet_SOURCES = NeuralNetworkState.h ActivationFunction.h main.cpp NeuralNet.h ObjectiveFunction.h util.h loader/loader.h loader/mnist.h
+neuralnet_SOURCES = NeuralNetworkState.h NeuralNetworkComputationUnit.h NeuralNetworkDisplayUnit.h ActivationFunction.h main.cpp NeuralNet.h ObjectiveFunction.h util.h loader/loader.h loader/mnist.h
 all: all-am
 
 .SUFFIXES:

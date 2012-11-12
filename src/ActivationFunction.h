@@ -8,48 +8,48 @@ using Eigen::VectorXd;
 enum ActivationFunctionType{Tanh=0, Sigmoid};
 
 class ActivationFunction{
+	private:
+		ActivationFunctionType type;
 	public:
-		ActivationFunction(ActivationFunctionType a):
+		ActivationFunction(ActivationFunctionType a=Tanh):
 			type(a){
 
 		}
+
 		VectorXd operator()(VectorXd x){
+			PRINT(x);
 			for(uint i=0;i<x.size();i++){
-				x(i) = (*this)((double)x(i));
+				switch(type){
+					case Tanh:
+						x(i) = tanh(x(i));
+						break;
+					case Sigmoid:
+						x(i) = sigmoid(x(i));
+						break;
+					default:
+						HALT("Function type is not supported");
+						break;
+				}
 			}
+			PRINT(x);
 			return x;
 		}
-		double operator()(double x){
-			switch(type){
-				case Tanh:
-					return tanh(x);
-					break;
-				case Sigmoid:
-					return sigmoid(x);
-					break;
-				default:
-					HALT("Function type is not supported");
-					break;
-			}
-		}
+
 		VectorXd ds(VectorXd x){
 			for(uint i=0;i<x.size();i++){
-				x(i) = this->ds((double)x(i));
+				switch(type){
+					case Tanh:
+						x(i) = 1.0-tanh(x(i))*tanh(x(i));
+						break;
+					case Sigmoid:
+						x(i) = sigmoid(x(i))*(1.0-sigmoid(x(i)));
+						break;
+					default:
+						HALT("Function type is not supported");
+						break;
+				}
 			}
 			return x;
-		}
-		double ds(double x){
-			switch(type){
-				case Tanh:
-					return 1.0-tanh(x)*tanh(x);
-					break;
-				case Sigmoid:
-					return sigmoid(x)*(1.0-sigmoid(x));
-					break;
-				default:
-					HALT("Function type is not supported");
-					break;
-			}
 		}
 	private:
 
@@ -57,7 +57,5 @@ class ActivationFunction{
 			return 1.0/(1.0+exp(-x));
 		}
 
-	private:
-		ActivationFunctionType type;
 };
 

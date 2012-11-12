@@ -37,7 +37,6 @@ class NeuralNetworkDisplayUnit{
 		Mat img = VectorXd_to_cv_Mat(x, dimX, dimY);
 
 		namedWindow(this->windowName.c_str(), CV_WINDOW_AUTOSIZE);
-		PRINT("show sample");
 		imshow( this->windowName.c_str(), img);
 
 		waitKey(0);

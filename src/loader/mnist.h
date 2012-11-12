@@ -62,7 +62,7 @@ namespace loader{
 									samples.push_back(v);
 									unsigned char temp=0;
 									file.read((char*)&temp,sizeof(temp));
-									samples.at(i)(0) = temp;
+									exit;
 								}
 						}
 				}else{
