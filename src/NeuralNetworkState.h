@@ -41,13 +41,15 @@ struct NeuralNetworkState{
 
 			W.push_back( MatrixXd::Random(N_hidden_neurons_per_layer, N_input_neurons) );
 			b.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
+			delta.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
+
 			x.push_back( VectorXd::Random(N_input_neurons) );
 			x_ds.push_back( VectorXd::Random(N_input_neurons) );
-			delta.push_back( VectorXd::Random(N_input_neurons) );
 			for(uint l=1;l<L_hidden_layers+1;l++){
 				x.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
 				x_ds.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
 			}
+
 			for(uint l=1;l<L_hidden_layers;l++){
 				W.push_back( MatrixXd::Random(N_hidden_neurons_per_layer, N_hidden_neurons_per_layer) );
 				b.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
@@ -55,9 +57,10 @@ struct NeuralNetworkState{
 			}
 			W.push_back( MatrixXd::Random(N_output_neurons, N_hidden_neurons_per_layer) );
 			b.push_back( VectorXd::Random(N_output_neurons));
+			delta.push_back( VectorXd::Random(N_output_neurons) );
+
 			x.push_back( VectorXd::Random(N_output_neurons) );
 			x_ds.push_back( VectorXd::Random(N_output_neurons) );
-			delta.push_back( VectorXd::Random(N_hidden_neurons_per_layer) );
 
 			PRINT("Neural Network -- "<<N_input_neurons << " input units -- " 
 					<< N_output_neurons << " output units -- " << L_hidden_layers << " hidden layer");

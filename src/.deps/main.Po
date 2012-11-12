@@ -74,7 +74,7 @@ main.o: main.cpp /usr/include/c++/4.4/iostream \
  /usr/include/c++/4.4/bits/ostream.tcc /usr/include/c++/4.4/istream \
  /usr/include/c++/4.4/bits/istream.tcc util.h \
  /usr/include/c++/4.4/sstream /usr/include/c++/4.4/bits/sstream.tcc \
- NeuralNet.h /usr/include/c++/4.4/vector \
+ NeuralNetwork.h /usr/include/c++/4.4/vector \
  /usr/include/c++/4.4/bits/stl_construct.h \
  /usr/include/c++/4.4/bits/stl_uninitialized.h \
  /usr/include/c++/4.4/bits/stl_vector.h \
@@ -494,7 +494,7 @@ util.h:
 
 /usr/include/c++/4.4/bits/sstream.tcc:
 
-NeuralNet.h:
+NeuralNetwork.h:
 
 /usr/include/c++/4.4/vector:
 

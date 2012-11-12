@@ -1,6 +1,6 @@
 #include <iostream>
 #include "util.h"
-#include "NeuralNet.h"
+#include "NeuralNetwork.h"
 
 int main()
 {

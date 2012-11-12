@@ -11,10 +11,6 @@ struct ObjectiveFunction{
 		double operator()(NeuralNetworkState &state, VectorXd label_y){
 
 			//residual between output and target
-			PRINT(state.get_N_output_neurons());
-			PRINT(state.output());
-			PRINT(state.output().size());
-			PRINT(label_y);
 			VectorXd residual = state.output() - label_y;
 			
 			//weight decay and squared loss

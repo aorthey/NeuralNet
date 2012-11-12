@@ -17,7 +17,6 @@ class ActivationFunction{
 		}
 
 		VectorXd operator()(VectorXd x){
-			PRINT(x);
 			for(uint i=0;i<x.size();i++){
 				switch(type){
 					case Tanh:
@@ -31,7 +30,6 @@ class ActivationFunction{
 						break;
 				}
 			}
-			PRINT(x);
 			return x;
 		}
 
